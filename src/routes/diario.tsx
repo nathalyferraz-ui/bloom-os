@@ -40,10 +40,10 @@ function Journal() {
   const [editing, setEditing] = useState(false);
 
   useEffect(() => {
-    if (!data || currentId) return;
+    if (!data || editing) return;
     const first = [...data.entries].sort((a, b) => b.date.localeCompare(a.date))[0];
     if (first) { setCurrentId(first.id); setDraft(first); setEditing(true); }
-  }, [data, currentId]);
+  }, [data, editing]);
 
   if (!data) return null;
   const entries = [...data.entries].sort((a, b) => b.date.localeCompare(a.date));
