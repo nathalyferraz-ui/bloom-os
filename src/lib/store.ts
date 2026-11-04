@@ -6,7 +6,7 @@ const KEY = "bloom-os:v1";
 
 export function createDemoData(): BloomState {
   const t = (n: number) => toKey(addDays(new Date(), n));
-  const past = lastNDays(7).map(toKey);
+  const past = lastNDays(7).map(toKey) as [string, string, string, string, string, string, string];
   return {
     profile: { name: "Nathaly Ferraz", showFirstNameOnly: true },
     tasks: [

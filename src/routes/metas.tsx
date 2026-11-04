@@ -83,7 +83,7 @@ function GoalDialog({ open, goal, onOpenChange }: { open: boolean; goal?: Goal; 
   useEffect(() => { if (open) setF(goal ? { ...blank, ...goal, description: goal.description ?? "" } : blank); }, [open, goal]); // eslint-disable-line react-hooks/exhaustive-deps
   const submit = (e: React.FormEvent) => {
     e.preventDefault();
-    if (!f.title.trim()) return toast.error("Dê um título para a meta.");
+    if (!f.title.trim()) { toast.error("Dê um título para a meta."); return; }
     goalActions.save({ ...f, id: goal?.id, title: f.title.trim(), demo: false });
     toast.success(goal ? "Meta atualizada" : "Meta criada");
     onOpenChange(false);

@@ -51,7 +51,7 @@ function Journal() {
   const newEntry = () => { setCurrentId(null); setDraft(blank()); setEditing(true); };
   const open = (e: JournalEntry) => { setCurrentId(e.id); setDraft(e); setEditing(true); };
   const save = () => {
-    if (!draft.title.trim() && !draft.content.trim()) return toast.error("Escreva algo antes de salvar.");
+    if (!draft.title.trim() && !draft.content.trim()) { toast.error("Escreva algo antes de salvar."); return; }
     const id = entryActions.save({ ...draft, id: currentId ?? undefined, demo: false });
     setCurrentId(id);
     toast.success("Entrada salva");

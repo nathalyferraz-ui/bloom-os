@@ -30,7 +30,7 @@ export function TaskDialog({ open, onOpenChange, task, defaultDate }: { open: bo
 
   const submit = (e: React.FormEvent) => {
     e.preventDefault();
-    if (!form.title.trim()) return toast.error("Dê um nome para a tarefa.");
+    if (!form.title.trim()) { toast.error("Dê um nome para a tarefa."); return; }
     taskActions.save({ ...task, ...form, title: form.title.trim(), time: form.time || undefined, done: task?.done ?? false, demo: false, id: task?.id });
     toast.success(task ? "Tarefa atualizada" : "Tarefa criada");
     onOpenChange(false);

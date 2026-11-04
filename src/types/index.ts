@@ -7,11 +7,11 @@ export interface Task {
   id: string;
   title: string;
   date: string; // YYYY-MM-DD
-  time?: string; // HH:mm
+  time?: string | undefined; // HH:mm
   priority: Priority;
   category: TaskCategory;
   done: boolean;
-  demo?: boolean;
+  demo?: boolean | undefined;
 }
 
 export interface Habit {
@@ -20,19 +20,19 @@ export interface Habit {
   /** times per week the habit should happen (7 = daily) */
   timesPerWeek: number;
   log: string[]; // dates YYYY-MM-DD completed
-  demo?: boolean;
+  demo?: boolean | undefined;
 }
 
 export interface Goal {
   id: string;
   title: string;
-  description?: string;
+  description?: string | undefined;
   category: string;
   targetDate: string;
   progress: number; // 0-100
   status: GoalStatus;
   color: "rose" | "plum" | "champagne" | "dusty";
-  demo?: boolean;
+  demo?: boolean | undefined;
 }
 
 export interface JournalEntry {
@@ -41,7 +41,7 @@ export interface JournalEntry {
   title: string;
   mood: Mood;
   content: string;
-  demo?: boolean;
+  demo?: boolean | undefined;
 }
 
 export interface Profile {

@@ -1,7 +1,7 @@
 export const pad = (n: number) => String(n).padStart(2, "0");
 export const toKey = (d: Date) => `${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())}`;
 export const fromKey = (k: string) => {
-  const [y, m, d] = k.split("-").map(Number);
+  const [y = 0, m = 1, d = 1] = k.split("-").map(Number);
   return new Date(y, m - 1, d);
 };
 export const addDays = (d: Date, n: number) => {

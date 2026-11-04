@@ -95,7 +95,7 @@ function HabitDialog({ open, habit, onOpenChange }: { open: boolean; habit?: Hab
   useEffect(() => { if (open) { setName(habit?.name ?? ""); setFreq(habit?.timesPerWeek ?? 7); } }, [open, habit]);
   const submit = (e: React.FormEvent) => {
     e.preventDefault();
-    if (!name.trim()) return toast.error("Dê um nome para o hábito.");
+    if (!name.trim()) { toast.error("Dê um nome para o hábito."); return; }
     habitActions.save({ id: habit?.id, name: name.trim(), timesPerWeek: freq, demo: false });
     toast.success(habit ? "Hábito atualizado" : "Hábito criado");
     onOpenChange(false);
