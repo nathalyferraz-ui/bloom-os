@@ -7,7 +7,7 @@ const upsert = <T extends Entity>(list: T[], item: T) =>
   list.some((x) => x.id === item.id) ? list.map((x) => (x.id === item.id ? item : x)) : [item, ...list];
 
 export const taskActions = {
-  save: (t: Omit<Task, "id"> & { id?: string }) =>
+  save: (t: Omit<Task, "id"> & { id?: string | undefined }) =>
     setState((s) => ({ ...s, tasks: upsert(s.tasks, { ...t, id: t.id ?? uid() } as Task) })),
   toggle: (id: string) =>
     setState((s) => ({ ...s, tasks: s.tasks.map((t) => (t.id === id ? { ...t, done: !t.done } : t)) })),
@@ -15,7 +15,7 @@ export const taskActions = {
 };
 
 export const habitActions = {
-  save: (h: Omit<Habit, "id" | "log"> & { id?: string; log?: string[] }) =>
+  save: (h: Omit<Habit, "id" | "log"> & { id?: string | undefined; log?: string[] | undefined }) =>
     setState((s) => {
       const prev = s.habits.find((x) => x.id === h.id);
       return { ...s, habits: upsert(s.habits, { ...h, id: h.id ?? uid(), log: h.log ?? prev?.log ?? [] } as Habit) };
@@ -31,7 +31,7 @@ export const habitActions = {
 };
 
 export const goalActions = {
-  save: (g: Omit<Goal, "id"> & { id?: string }) =>
+  save: (g: Omit<Goal, "id"> & { id?: string | undefined }) =>
     setState((s) => ({ ...s, goals: upsert(s.goals, { ...g, id: g.id ?? uid() } as Goal) })),
   setProgress: (id: string, progress: number) =>
     setState((s) => ({
@@ -44,7 +44,7 @@ export const goalActions = {
 };
 
 export const entryActions = {
-  save: (e: Omit<JournalEntry, "id"> & { id?: string }) => {
+  save: (e: Omit<JournalEntry, "id"> & { id?: string | undefined }) => {
     const id = e.id ?? uid();
     setState((s) => ({ ...s, entries: upsert(s.entries, { ...e, id } as JournalEntry) }));
     return id;
