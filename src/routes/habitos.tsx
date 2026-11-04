@@ -89,7 +89,7 @@ function Habits() {
   );
 }
 
-function HabitDialog({ open, habit, onOpenChange }: { open: boolean; habit?: Habit; onOpenChange: (o: boolean) => void }) {
+function HabitDialog({ open, habit, onOpenChange }: { open: boolean; habit?: Habit | undefined; onOpenChange: (o: boolean) => void }) {
   const [name, setName] = useState("");
   const [freq, setFreq] = useState(7);
   useEffect(() => { if (open) { setName(habit?.name ?? ""); setFreq(habit?.timesPerWeek ?? 7); } }, [open, habit]);

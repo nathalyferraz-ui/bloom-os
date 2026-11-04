@@ -77,7 +77,7 @@ function Goals() {
   );
 }
 
-function GoalDialog({ open, goal, onOpenChange }: { open: boolean; goal?: Goal; onOpenChange: (o: boolean) => void }) {
+function GoalDialog({ open, goal, onOpenChange }: { open: boolean; goal?: Goal | undefined; onOpenChange: (o: boolean) => void }) {
   const blank = { title: "", description: "", category: "Pessoal", targetDate: toKey(addDays(new Date(), 90)), progress: 0, status: "ativa" as GoalStatus, color: "rose" as Goal["color"] };
   const [f, setF] = useState(blank);
   useEffect(() => { if (open) setF(goal ? { ...blank, ...goal, description: goal.description ?? "" } : blank); }, [open, goal]); // eslint-disable-line react-hooks/exhaustive-deps
@@ -99,7 +99,7 @@ function GoalDialog({ open, goal, onOpenChange }: { open: boolean; goal?: Goal; 
             <div className="grid gap-1.5"><Label htmlFor="g-c">Categoria</Label><Input id="g-c" value={f.category} onChange={(e) => setF({ ...f, category: e.target.value })} /></div>
             <div className="grid gap-1.5"><Label htmlFor="g-dt">Data-alvo</Label><Input id="g-dt" type="date" value={f.targetDate} onChange={(e) => setF({ ...f, targetDate: e.target.value })} required /></div>
           </div>
-          <div className="grid gap-2"><Label>Progresso: {f.progress}%</Label><Slider value={[f.progress]} max={100} step={5} onValueChange={([v]) => setF({ ...f, progress: v })} /></div>
+          <div className="grid gap-2"><Label>Progresso: {f.progress}%</Label><Slider value={[f.progress]} max={100} step={5} onValueChange={([v]) => setF({ ...f, progress: v ?? 0 })} /></div>
           <div className="grid grid-cols-2 gap-3">
             <div className="grid gap-1.5">
               <Label>Status</Label>

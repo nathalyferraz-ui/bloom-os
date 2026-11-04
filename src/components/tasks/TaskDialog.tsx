@@ -16,7 +16,7 @@ export const PRIORITIES: { value: Priority; label: string }[] = [
   { value: "alta", label: "Alta" },
 ];
 
-export function TaskDialog({ open, onOpenChange, task, defaultDate }: { open: boolean; onOpenChange: (o: boolean) => void; task?: Task | null; defaultDate?: string }) {
+export function TaskDialog({ open, onOpenChange, task, defaultDate }: { open: boolean; onOpenChange: (o: boolean) => void; task?: Task | null | undefined; defaultDate?: string }) {
   const [form, setForm] = useState({ title: "", date: todayKey(), time: "", priority: "media" as Priority, category: "Pessoal" as TaskCategory });
 
   useEffect(() => {
