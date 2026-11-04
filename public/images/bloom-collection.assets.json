@@ -1,0 +1,82 @@
+[
+  {
+    "file": "bloom-lilies-320.webp",
+    "width": 320,
+    "height": 339,
+    "cornerAlpha": 0,
+    "bytes": 45834,
+    "sourceBytes": 2032098
+  },
+  {
+    "file": "bloom-lilies.webp",
+    "width": 640,
+    "height": 679,
+    "cornerAlpha": 0,
+    "bytes": 148198,
+    "sourceBytes": 2032098
+  },
+  {
+    "file": "bloom-planning-400.webp",
+    "width": 400,
+    "height": 225,
+    "cornerAlpha": 255,
+    "bytes": 7980,
+    "sourceBytes": 2736564
+  },
+  {
+    "file": "bloom-planning.webp",
+    "width": 800,
+    "height": 450,
+    "cornerAlpha": 255,
+    "bytes": 27220,
+    "sourceBytes": 2736564
+  },
+  {
+    "file": "bloom-habits-400.webp",
+    "width": 400,
+    "height": 225,
+    "cornerAlpha": 255,
+    "bytes": 6816,
+    "sourceBytes": 1842767
+  },
+  {
+    "file": "bloom-habits.webp",
+    "width": 800,
+    "height": 450,
+    "cornerAlpha": 255,
+    "bytes": 18218,
+    "sourceBytes": 1842767
+  },
+  {
+    "file": "bloom-goals-400.webp",
+    "width": 400,
+    "height": 225,
+    "cornerAlpha": 255,
+    "bytes": 5866,
+    "sourceBytes": 1772175
+  },
+  {
+    "file": "bloom-goals.webp",
+    "width": 800,
+    "height": 450,
+    "cornerAlpha": 255,
+    "bytes": 15570,
+    "sourceBytes": 1772175
+  },
+  {
+    "file": "bloom-journal-400.webp",
+    "width": 400,
+    "height": 225,
+    "cornerAlpha": 255,
+    "bytes": 6344,
+    "sourceBytes": 2053066
+  },
+  {
+    "file": "bloom-journal.webp",
+    "width": 800,
+    "height": 450,
+    "cornerAlpha": 255,
+    "bytes": 17528,
+    "sourceBytes": 2053066
+  }
+]

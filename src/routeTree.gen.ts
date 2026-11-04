@@ -10,8 +10,12 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as BemEstarRouteImport } from './routes/bem-estar'
+import { Route as BibliotecaRouteImport } from './routes/biblioteca'
 import { Route as ConfiguracoesRouteImport } from './routes/configuracoes'
 import { Route as DiarioRouteImport } from './routes/diario'
+import { Route as EstudosRouteImport } from './routes/estudos'
+import { Route as FinancasRouteImport } from './routes/financas'
 import { Route as HabitosRouteImport } from './routes/habitos'
 import { Route as MetasRouteImport } from './routes/metas'
 import { Route as PlanejamentoRouteImport } from './routes/planejamento'
@@ -19,6 +23,16 @@ import { Route as PlanejamentoRouteImport } from './routes/planejamento'
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BemEstarRoute = BemEstarRouteImport.update({
+  id: '/bem-estar',
+  path: '/bem-estar',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BibliotecaRoute = BibliotecaRouteImport.update({
+  id: '/biblioteca',
+  path: '/biblioteca',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ConfiguracoesRoute = ConfiguracoesRouteImport.update({
@@ -29,6 +43,16 @@ const ConfiguracoesRoute = ConfiguracoesRouteImport.update({
 const DiarioRoute = DiarioRouteImport.update({
   id: '/diario',
   path: '/diario',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EstudosRoute = EstudosRouteImport.update({
+  id: '/estudos',
+  path: '/estudos',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FinancasRoute = FinancasRouteImport.update({
+  id: '/financas',
+  path: '/financas',
   getParentRoute: () => rootRouteImport,
 } as any)
 const HabitosRoute = HabitosRouteImport.update({
@@ -49,16 +73,24 @@ const PlanejamentoRoute = PlanejamentoRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/bem-estar': typeof BemEstarRoute
+  '/biblioteca': typeof BibliotecaRoute
   '/configuracoes': typeof ConfiguracoesRoute
   '/diario': typeof DiarioRoute
+  '/estudos': typeof EstudosRoute
+  '/financas': typeof FinancasRoute
   '/habitos': typeof HabitosRoute
   '/metas': typeof MetasRoute
   '/planejamento': typeof PlanejamentoRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/bem-estar': typeof BemEstarRoute
+  '/biblioteca': typeof BibliotecaRoute
   '/configuracoes': typeof ConfiguracoesRoute
   '/diario': typeof DiarioRoute
+  '/estudos': typeof EstudosRoute
+  '/financas': typeof FinancasRoute
   '/habitos': typeof HabitosRoute
   '/metas': typeof MetasRoute
   '/planejamento': typeof PlanejamentoRoute
@@ -66,8 +98,12 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/bem-estar': typeof BemEstarRoute
+  '/biblioteca': typeof BibliotecaRoute
   '/configuracoes': typeof ConfiguracoesRoute
   '/diario': typeof DiarioRoute
+  '/estudos': typeof EstudosRoute
+  '/financas': typeof FinancasRoute
   '/habitos': typeof HabitosRoute
   '/metas': typeof MetasRoute
   '/planejamento': typeof PlanejamentoRoute
@@ -75,15 +111,37 @@ export interface FileRoutesById {
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
-    '/' | '/configuracoes' | '/diario' | '/habitos' | '/metas' | '/planejamento'
+    | '/'
+    | '/bem-estar'
+    | '/biblioteca'
+    | '/configuracoes'
+    | '/diario'
+    | '/estudos'
+    | '/financas'
+    | '/habitos'
+    | '/metas'
+    | '/planejamento'
   fileRoutesByTo: FileRoutesByTo
   to:
-    '/' | '/configuracoes' | '/diario' | '/habitos' | '/metas' | '/planejamento'
+    | '/'
+    | '/bem-estar'
+    | '/biblioteca'
+    | '/configuracoes'
+    | '/diario'
+    | '/estudos'
+    | '/financas'
+    | '/habitos'
+    | '/metas'
+    | '/planejamento'
   id:
     | '__root__'
     | '/'
+    | '/bem-estar'
+    | '/biblioteca'
     | '/configuracoes'
     | '/diario'
+    | '/estudos'
+    | '/financas'
     | '/habitos'
     | '/metas'
     | '/planejamento'
@@ -91,8 +149,12 @@ export interface FileRouteTypes {
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  BemEstarRoute: typeof BemEstarRoute
+  BibliotecaRoute: typeof BibliotecaRoute
   ConfiguracoesRoute: typeof ConfiguracoesRoute
   DiarioRoute: typeof DiarioRoute
+  EstudosRoute: typeof EstudosRoute
+  FinancasRoute: typeof FinancasRoute
   HabitosRoute: typeof HabitosRoute
   MetasRoute: typeof MetasRoute
   PlanejamentoRoute: typeof PlanejamentoRoute
@@ -107,6 +169,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/bem-estar': {
+      id: '/bem-estar'
+      path: '/bem-estar'
+      fullPath: '/bem-estar'
+      preLoaderRoute: typeof BemEstarRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/biblioteca': {
+      id: '/biblioteca'
+      path: '/biblioteca'
+      fullPath: '/biblioteca'
+      preLoaderRoute: typeof BibliotecaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/configuracoes': {
       id: '/configuracoes'
       path: '/configuracoes'
@@ -119,6 +195,20 @@ declare module '@tanstack/react-router' {
       path: '/diario'
       fullPath: '/diario'
       preLoaderRoute: typeof DiarioRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/estudos': {
+      id: '/estudos'
+      path: '/estudos'
+      fullPath: '/estudos'
+      preLoaderRoute: typeof EstudosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/financas': {
+      id: '/financas'
+      path: '/financas'
+      fullPath: '/financas'
+      preLoaderRoute: typeof FinancasRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/habitos': {
@@ -147,8 +237,12 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  BemEstarRoute: BemEstarRoute,
+  BibliotecaRoute: BibliotecaRoute,
   ConfiguracoesRoute: ConfiguracoesRoute,
   DiarioRoute: DiarioRoute,
+  EstudosRoute: EstudosRoute,
+  FinancasRoute: FinancasRoute,
   HabitosRoute: HabitosRoute,
   MetasRoute: MetasRoute,
   PlanejamentoRoute: PlanejamentoRoute,

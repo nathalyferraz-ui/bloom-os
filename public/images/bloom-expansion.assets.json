@@ -1,0 +1,62 @@
+{
+  "format": "WebP",
+  "quality": 0.84,
+  "assets": [
+    {
+      "module": "finance",
+      "path": "public/images/bloom-finance.webp",
+      "width": 800,
+      "height": 450,
+      "bytes": 14096
+    },
+    {
+      "module": "finance",
+      "path": "public/images/bloom-finance-400.webp",
+      "width": 400,
+      "height": 225,
+      "bytes": 4696
+    },
+    {
+      "module": "study",
+      "path": "public/images/bloom-study.webp",
+      "width": 800,
+      "height": 450,
+      "bytes": 13904
+    },
+    {
+      "module": "study",
+      "path": "public/images/bloom-study-400.webp",
+      "width": 400,
+      "height": 225,
+      "bytes": 5408
+    },
+    {
+      "module": "library",
+      "path": "public/images/bloom-library.webp",
+      "width": 800,
+      "height": 450,
+      "bytes": 16974
+    },
+    {
+      "module": "library",
+      "path": "public/images/bloom-library-400.webp",
+      "width": 400,
+      "height": 225,
+      "bytes": 6120
+    },
+    {
+      "module": "wellbeing",
+      "path": "public/images/bloom-wellbeing.webp",
+      "width": 800,
+      "height": 450,
+      "bytes": 21444
+    },
+    {
+      "module": "wellbeing",
+      "path": "public/images/bloom-wellbeing-400.webp",
+      "width": 400,
+      "height": 225,
+      "bytes": 7864
+    }
+  ]
+}
