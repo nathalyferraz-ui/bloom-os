@@ -4,6 +4,8 @@ export const fromKey = (k: string) => {
   const [y = 0, m = 1, d = 1] = k.split("-").map(Number);
   return new Date(y, m - 1, d);
 };
+export const isDateKey = (value: unknown): value is string =>
+  typeof value === "string" && /^\d{4}-\d{2}-\d{2}$/.test(value) && toKey(fromKey(value)) === value;
 export const addDays = (d: Date, n: number) => {
   const r = new Date(d);
   r.setDate(r.getDate() + n);

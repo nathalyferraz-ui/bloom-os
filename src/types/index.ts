@@ -1,3 +1,12 @@
+import type { FinanceState } from "./finance";
+import type { StudyState } from "./study";
+import type { LibraryState } from "./library";
+import type { WellbeingState } from "./wellbeing";
+export * from "./finance";
+export * from "./study";
+export * from "./library";
+export * from "./wellbeing";
+
 export type Priority = "baixa" | "media" | "alta";
 export type TaskCategory = "Pessoal" | "Trabalho" | "Estudos" | "Autocuidado";
 export type Mood = "feliz" | "tranquila" | "motivada" | "cansada" | "triste";
@@ -55,4 +64,8 @@ export interface BloomState {
   habits: Habit[];
   goals: Goal[];
   entries: JournalEntry[];
+  finance: FinanceState;
+  study: StudyState;
+  library: LibraryState;
+  wellbeing: WellbeingState;
 }

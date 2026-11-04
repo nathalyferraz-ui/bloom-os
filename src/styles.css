@@ -69,7 +69,8 @@
   --card-foreground: var(--plum);
   --popover: oklch(0.993 0.005 20);
   --popover-foreground: var(--plum);
-  --primary: var(--rose);
+  /* A deeper blend of the existing palette keeps small button labels legible. */
+  --primary: color-mix(in oklch, var(--rose) 80%, var(--plum));
   --primary-foreground: oklch(0.99 0.005 20);
   --secondary: var(--blush);
   --secondary-foreground: var(--plum);
@@ -108,6 +109,11 @@
     -webkit-font-smoothing: antialiased;
   }
   h1, h2, h3 { font-family: var(--font-display); }
+  :where(a, button, input, textarea, select, [tabindex]):focus-visible {
+    outline: 2px solid var(--rose);
+    outline-offset: 3px;
+  }
+  :where(button, a, input, textarea, select) { -webkit-tap-highlight-color: transparent; }
 }
 
 @utility bloom-card {
@@ -116,7 +122,43 @@
   border-radius: calc(var(--radius) + 2px);
   box-shadow: var(--shadow-soft);
   transition: box-shadow 220ms ease, transform 220ms ease;
-  &:hover { box-shadow: var(--shadow-lift); }
+  @media (hover: hover) and (pointer: fine) {
+    &:hover { box-shadow: var(--shadow-lift); transform: translateY(-2px); }
+  }
+}
+@utility bloom-press {
+  transition: background-color 220ms ease, border-color 220ms ease, box-shadow 220ms ease, transform 220ms ease;
+  &:active:not(:disabled) { transform: scale(0.98); }
+}
+@utility bloom-icon-button {
+  display: inline-grid;
+  width: 2.5rem;
+  height: 2.5rem;
+  flex-shrink: 0;
+  place-items: center;
+  border-radius: 0.75rem;
+  color: var(--rose);
+  transition: background-color 220ms ease, transform 220ms ease;
+  &:hover { background: var(--blush); }
+  &:active { transform: scale(0.96); }
+  @media (pointer: coarse) { width: 2.75rem; height: 2.75rem; }
+}
+@utility bloom-chip {
+  display: inline-flex;
+  min-height: 2.25rem;
+  align-items: center;
+  justify-content: center;
+  gap: 0.375rem;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  padding: 0.375rem 0.75rem;
+  font-size: 0.75rem;
+  line-height: 1.25rem;
+  transition: background-color 220ms ease, border-color 220ms ease, transform 220ms ease;
+  &:hover { background: var(--blush); }
+  &:active { transform: scale(0.98); }
+  &[aria-pressed="true"] { background: var(--primary); border-color: var(--primary); color: var(--primary-foreground); }
+  @media (pointer: coarse) { min-height: 2.75rem; }
 }
 @utility bg-banner { background: var(--gradient-banner); }
 @utility bg-plum-gradient { background: var(--gradient-plum); }
@@ -133,4 +175,5 @@
 
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+  .bloom-card:hover, .bloom-press:active, .bloom-icon-button:active, .bloom-chip:active { transform: none !important; }
 }

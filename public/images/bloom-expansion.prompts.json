@@ -1,0 +1,39 @@
+{
+  "tool": "built-in image_gen",
+  "mode": "generate",
+  "transparentBackground": false,
+  "assets": [
+    {
+      "module": "finance",
+      "prompt": "Use case: photorealistic-natural. Asset type: decorative wide landscape page header banner for Bloom OS, a sophisticated feminine personal organizer. Style: premium editorial still-life photography, minimal refined styling, blush pink, antique rose, warm ivory cream and muted champagne only. Delicate pale pink lilies and peonies with subtle natural texture, soft diffuse daylight, gentle shadows, fine paper texture. Composition: wide 16:9, the left 55 percent is empty warm ivory with no objects, all objects arranged elegantly in the right third, complete recognizable objects with breathing space, subdued low contrast to fit softly behind interface headings. Absolutely no text, no lettering, no numbers, no logos, no watermarks, no people, no saturated colors. Subject: a closed blush financial planner with blank unmarked cover, elegant champagne metal pen, a few small neutral unmarked paper slips, pale pink lily sprig. Financial calm and careful organization, no money, no bank cards, no charts.",
+      "outputs": [
+        "bloom-finance.webp",
+        "bloom-finance-400.webp"
+      ]
+    },
+    {
+      "module": "study",
+      "prompt": "Use case: photorealistic-natural. Asset type: decorative wide landscape page header banner for Bloom OS, a sophisticated feminine personal organizer. Style: premium editorial still-life photography, minimal refined styling, blush pink, antique rose, warm ivory cream and muted champagne only. Delicate pale pink lilies and peonies with subtle natural texture, soft diffuse daylight, gentle shadows, fine paper texture. Composition: wide 16:9, the left 55 percent is empty warm ivory with no objects, all objects arranged elegantly in the right third, complete recognizable objects with breathing space, subdued low contrast to fit softly behind interface headings. Absolutely no text, no lettering, no numbers, no logos, no watermarks, no people, no saturated colors. Subject: two slim cream and dusty rose study books with completely blank covers and spines, an open ivory notebook with blank unmarked paper, a slender elegant pen and a delicate pale pink peony. Calm focused learning.",
+      "outputs": [
+        "bloom-study.webp",
+        "bloom-study-400.webp"
+      ]
+    },
+    {
+      "module": "library",
+      "prompt": "Use case: photorealistic-natural. Asset type: decorative wide landscape page header banner for Bloom OS, a sophisticated feminine personal organizer. Style: premium editorial still-life photography, minimal refined styling, blush pink, antique rose, warm ivory cream and muted champagne only. Delicate pale pink lilies and peonies with subtle natural texture, soft diffuse daylight, gentle shadows, fine paper texture. Composition: wide 16:9, the left 55 percent is empty warm ivory with no objects, all objects arranged elegantly in the right third, complete recognizable objects with breathing space, subdued low contrast to fit softly behind interface headings. Absolutely no text, no lettering, no numbers, no logos, no watermarks, no people, no saturated colors. Subject: a small elegant stack of hardback books in ivory, dusty rose and warm beige with completely blank spines and covers, one open book showing blank unmarked textured pages, pale pink peony stem. Cozy literary editorial mood.",
+      "outputs": [
+        "bloom-library.webp",
+        "bloom-library-400.webp"
+      ]
+    },
+    {
+      "module": "wellbeing",
+      "prompt": "Use case: photorealistic-natural. Asset type: decorative wide landscape page header banner for Bloom OS, a sophisticated feminine personal organizer. Style: premium editorial still-life photography, minimal refined styling, blush pink, antique rose, warm ivory cream and muted champagne only. Delicate pale pink lilies and peonies with subtle natural texture, soft diffuse daylight, gentle shadows, fine paper texture. Composition: wide 16:9, the left 55 percent is empty warm ivory with no objects, all objects arranged elegantly in the right third, complete recognizable objects with breathing space, subdued low contrast to fit softly behind interface headings. Absolutely no text, no lettering, no numbers, no logos, no watermarks, no people, no saturated colors. Subject: a graceful loose arrangement of pale blush lilies and soft peonies, a few natural botanical leaves, folded cream linen and a smooth small neutral natural stone. Welcoming quiet rest, botanical premium minimalism, no wellness products or medical objects.",
+      "outputs": [
+        "bloom-wellbeing.webp",
+        "bloom-wellbeing-400.webp"
+      ]
+    }
+  ]
+}
